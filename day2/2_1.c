@@ -30,10 +30,10 @@ void drukuj(char A,int n)
 int main()
 {
     int a=250;
-    FILE fp = fopen("slowa.txt","r");
+    FILE fp = fopen("slowa","r");
     /char ch;
     while ((ch = fgetc(fp)) != EOF){
-       if (ch == '\n')
+    if (ch == '\n')
                 a++;
     }/
     /char slowo[MDN];

@@ -3,7 +3,7 @@
 
 int main()
 {
-    FILE *fp = fopen("1000.txt","r");
+    FILE *fp = fopen("input","r");
     int x;
     int a = 0;
     while(fscanf(fp,"%d",&x) != EOF)
@@ -13,7 +13,7 @@ int main()
     fclose(fp);
     int tab[a];
     a=0;
-    fopen("1000.txt","r");
+    fopen("input","r");
     while(fscanf(fp,"%d",&x) != EOF)
     {
         tab[a] = x;

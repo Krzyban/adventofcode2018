@@ -31,20 +31,10 @@ int main()
 {
 	int a=250;
 	FILE *fp = fopen("slowa","r");
-    /*char ch;
-    while ((ch = fgetc(fp)) != EOF){
-       if (ch == '\n')
-				a++;
-    }*/   
-    /*char slowo[MDN];
-	while(fscanf(fp,"%s",slowo) != EOF)
-	{
-		a++;
-	}*/
-    char **A = (char**) malloc(a*sizeof(char*));
+  char **A = (char**) malloc(a*sizeof(char*));
 	czytajplik(A,a,fp);
 	fclose(fp);
-    int x;
+  int x;
 	int dwa = 0;
 	int trzy = 0;
 	int licznik[26]={0};
@@ -70,13 +60,13 @@ int main()
 				dwa=1;
 			if(licznik[c]==3)
 				trzy=1;
-				licznik[c]=0;
+			licznik[c]=0;
 		}
 		if(dwa>0)
 			wynik1++;
 		if(trzy>0)
 			wynik2++;
-			printf("\n");
+		printf("\n");
 	}
 	int wynik = wynik1 * wynik2;
 	printf("Wynik1 - %d\n", wynik1);

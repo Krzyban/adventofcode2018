@@ -1,7 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
+<<<<<<< HEAD
 #define MDN 254
 #define MN 10
 
@@ -84,3 +82,5 @@ int main()
     printf("Wynik - %d\n", wynik);
     return 1;
 }
+=======
+>>>>>>> c518dc823c1233d01ce7a45b467aa0be13732afc

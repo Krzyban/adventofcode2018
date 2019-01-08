@@ -44,7 +44,7 @@ int main()
     char **A = (char**) malloc(a*sizeof(char*));
 	czytajplik(A,a,fp);
 	fclose(fp);
-	int x;
+    int x;
 	int dwa = 0;
 	int trzy = 0;
 	int licznik[26]={0};

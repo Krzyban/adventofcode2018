@@ -17,23 +17,13 @@ void czytajplik(char **A, int ilosc, FILE *fp)
 	}
 }
 
-void drukuj(char **A,int n)
-{ 
-	int i;
-	for (i=0;i<n;i++)
-	{
-		printf("%s",A[i]);   
-		printf("\n");
-	}
-}
-
 int main()
 {
 	int a=250;
 	FILE *fp = fopen("slowa","r");
 	/*char ch;
 	while ((ch = fgetc(fp)) != EOF){
-	   if (ch == '\n')
+	  if (ch == '\n')
 				a++;
 	}*/   
 	/*char slowo[MDN];
@@ -41,7 +31,7 @@ int main()
 	{
 		a++;
 	}*/
-	char **A = (char**) malloc(a*sizeof(char*));
+	char **A = (char**) malloc(a*sizeof(char*));//zapisuje wyrazy do tablicy
 	czytajplik(A,a,fp);
 	fclose(fp);
 	for(int i=1; i<a; i++)

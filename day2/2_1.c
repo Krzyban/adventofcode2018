@@ -7,23 +7,13 @@
 
 void czytajplik(char **A, int ilosc, FILE *fp)
 {
-	char slowo[MDN];
+	char slowo[MDN];// wczytanie wyrazow z pliku
 	int i=0;
 	for (i=0;i<ilosc; i++)
 	{
 		fscanf(fp,"%s",slowo);
 		A[i] = (char*) malloc(sizeof(char)*MDN);
-		strcpy(A[i],slowo);
-	}
-}
-
-void drukuj(char **A,int n)
-{ 
-	int i;
-	for (i=0;i<n;i++)
-	{
-		printf("%s",A[i]);   
-		printf("\n");
+		strcpy(A[i],slowo);//przeniesienie do tablicy A z slowo
 	}
 }
 
@@ -31,46 +21,44 @@ int main()
 {
 	int a=250;
 	FILE *fp = fopen("slowa","r");
-  char **A = (char**) malloc(a*sizeof(char*));
+  char **A = (char**) malloc(a*sizeof(char*));//tablica wyrazow
 	czytajplik(A,a,fp);
 	fclose(fp);
   int x;
 	int dwa = 0;
 	int trzy = 0;
-	int licznik[26]={0};
+	int licznik[26]={0};//26x0w tablicy
 	int wynik1=0, wynik2=0;
 	for(int i=0; i<a; i++)
 	{
-		dwa=0;
+		dwa=0;//liczniki 2 i 3
 		trzy=0;
 		int j=0;
 		while(*(A[i]+j) != '\0')
 		{
-			if (*(A[i]+j) >= 'a' && *(A[i]+j) <= 'z')
+			if (*(A[i]+j) >= 'a' && *(A[i]+j) <= 'z')//z internetu
 			{
-				x = *(A[i]+j) - 'a';
-				licznik[x]++;
+				x = *(A[i]+j) - 'a';//kod asci -a=liczba od 0 do 26 
+				licznik[x]++;//dane miejsc zmeini sie z 0 na 1
 			}
 			j++;
 		}
-		for(int c=0; c<26; c++)
+		for(int c=0; c<26; c++)//
 		{
-			printf("%d",licznik[c]);
 			if(licznik[c]==2)
 				dwa=1;
 			if(licznik[c]==3)
 				trzy=1;
-			licznik[c]=0;
+			licznik[c]=0;//zerowanie by nie mieszalo sie przy kolejnych wyrazach
 		}
-		if(dwa>0)
+		if(dwa>0)//nie ma zliczac podwojnie
 			wynik1++;
 		if(trzy>0)
 			wynik2++;
-		printf("\n");
 	}
 	int wynik = wynik1 * wynik2;
-	printf("Wynik1 - %d\n", wynik1);
-	printf("Wynik2 - %d\n", wynik2);		
+	/*printf("Wynik1 - %d\n", wynik1);
+	printf("Wynik2 - %d\n", wynik2);	*/	
 	printf("Wynik - %d\n", wynik);	
 	return 1;
 }

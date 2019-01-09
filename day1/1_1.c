@@ -22,7 +22,7 @@ int main()
     fclose(fp);
     int suma = 0;
     for (int i = 0; i < a; i++){
-        suma+=tab[i];
+        suma+=tab[i];//suma=suma+tab[1]
     }
     printf("Suma - %d\n", suma);
     return 1;

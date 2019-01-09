@@ -36,14 +36,14 @@ int main()
 	fclose(fp);
 	for(int i=1; i<a; i++)
 	{
-		for(int j=0; j<i; j++)
+		for(int j=0; j<i; j++)//zeby nie porownywalo bez sensu dodatkowo 0z1 i 1 z 0
 		{
-			int l=0;
-			int c=0;
-			int x=0;
-			while(x<2 && c<26)
+			int l=0;//zlicza ilosc prawidlowych literek ma byc 25
+			int c=0;//znacznik pozycji w wyrazie 0-25
+			int x=0;//licznik bledow max 1
+			while(x<2 && c<26)//c skacze po wyrazie x sprawdza ilosc bledow
 			{
-				if(*(A[i]+c) == *(A[j]+c))
+				if(*(A[i]+c) == *(A[j]+c))//j jest do porownywania
 				{
 					c++;
 					l++;

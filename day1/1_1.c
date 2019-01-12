@@ -24,6 +24,6 @@ int main()
     for (int i = 0; i < a; i++){
         suma+=tab[i];//suma=suma+tab[1]
     }
-    printf("Suma - %d\n", suma);
+    printf("Suma  %d\n", suma);
     return 1;
 }

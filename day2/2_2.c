@@ -55,7 +55,7 @@ int main()
 				}
 			}
 			if(l==25)
-			printf("%s\n%s\n",A[i],A[j]); //wypisz wynik x2 dla pewnosci
+			printf("%s\n%s\n",A[i],A[j]); //wypisz wynik z 2 tablic dla pewnosci
 		}
 	}
 	return 1;

@@ -6,7 +6,7 @@ int main()
     FILE *fp = fopen("input","r");
     int x;
     int a = 0;
-    while(fscanf(fp,"%d",&x) != EOF) // EOF- koniec wiersza
+    while(fscanf(fp,"%d",&x) != EOF) // EOF- koniec wiersza liczenie wersow
     {
         a++;
     }

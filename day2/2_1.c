@@ -36,7 +36,7 @@ int main()
 		int j=0;
 		while(*(A[i]+j) != '\0')
 		{
-			if (*(A[i]+j) >= 'a' && *(A[i]+j) <= 'z')//z internetu
+			if (*(A[i]+j) >= 'a' && *(A[i]+j) <= 'z')//sprawdza czy jest litera
 			{
 				x = *(A[i]+j) - 'a';//kod asci -a=liczba od 0 do 26 
 				licznik[x]++;//dane miejsc zmeini sie z 0 na 1

@@ -20,7 +20,7 @@ int main()
         a++;
     }
     fclose(fp);
-    int suma[1000000];//mallock wywala blad 
+    int suma[1000000];
     suma[0]=tab[0];//pierwszy na sztywno
     int i = 1;
     x = 1;

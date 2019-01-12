@@ -21,16 +21,6 @@ int main()
 {
 	int a=250;
 	FILE *fp = fopen("slowa","r");
-	/*char ch;
-	while ((ch = fgetc(fp)) != EOF){
-	  if (ch == '\n')
-				a++;
-	}*/   
-	/*char slowo[MDN];
-	while(fscanf(fp,"%s",slowo) != EOF)
-	{
-		a++;
-	}*/
 	char **A = (char**) malloc(a*sizeof(char*));//zapisuje wyrazy do tablicy
 	czytajplik(A,a,fp);
 	fclose(fp);

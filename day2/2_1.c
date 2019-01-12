@@ -27,7 +27,7 @@ int main()
   int x;
 	int dwa = 0;
 	int trzy = 0;
-	int licznik[26]={0};//26x0w tablicy
+	int licznik[26]={0};//26x0w tablicy poczatkowych wartosci
 	int wynik1=0, wynik2=0;
 	for(int i=0; i<a; i++)
 	{
@@ -38,12 +38,12 @@ int main()
 		{
 			if (*(A[i]+j) >= 'a' && *(A[i]+j) <= 'z')//sprawdza czy jest litera
 			{
-				x = *(A[i]+j) - 'a';//kod asci -a=liczba od 0 do 26 
+				x = *(A[i]+j) - 'a';//kod asci -a=liczba od 0 do 26 ktora bedzei miejscem w tablicy
 				licznik[x]++;//dane miejsc zmeini sie z 0 na 1
 			}
 			j++;
 		}
-		for(int c=0; c<26; c++)//
+		for(int c=0; c<26; c++)// kontrola wartosci na pozycjach c w wyarazie
 		{
 			if(licznik[c]==2)
 				dwa=1;

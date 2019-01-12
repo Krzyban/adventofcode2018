@@ -20,18 +20,18 @@ int main()
         a++;
     }
     fclose(fp);
-    int suma[1000000];
+    int suma[1000000];// taablica na milion
     suma[0]=tab[0];//pierwszy na sztywno
     int i = 1;
     x = 1;
     while(1)
     {
-        suma[i]=suma[i-1]+tab[x];
+        suma[i]=suma[i-1]+tab[x]; //dodawanie kolejnych wartosci
         for (int j = 0; j < i; j++)
         {
-            if (suma[j]==suma[i])//sprawdzanie wszystkich poprzednich wartosci
+            if (suma[j]==suma[i])//sprawdzanie wszystkich poprzednich wartosci - szukanie odpowiedzi
             {
-                printf("Liczba - %d (pozycja - %d)\n", suma[j],i);
+                printf("Liczba - %d (pozycja - %d)\n", suma[j],i);// wypisanie rozwiazania
                 return 1;
 
             }

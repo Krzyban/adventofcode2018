@@ -1,29 +1,46 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+void czytajplik(int *tab, FILE *fp)
 {
-    FILE *fp = fopen("input","r");
-    int x;
     int a = 0;
-    while(fscanf(fp,"%d",&x) != EOF) // EOF- koniec wiersza liczenie wersow
-    {
-        a++;
-    }
-    fclose(fp);
-    int tab[a];
-    a=0;
-    fopen("input","r");
-    while(fscanf(fp,"%d",&x) != EOF)//pobieranie danych i zapis w tablicy przy pomocy fuckcji fopen
+    int x;
+    while(fscanf(fp,"%d",&x) != EOF)
     {
         tab[a] = x;
         a++;
     }
-    fclose(fp);
+}
+
+int zliczzmienne(FILE *fp)
+{
+    int a = 0;
+    int x;
+    while(fscanf(fp,"%d",&x) != EOF)
+    {
+        a++;
+    }
+    return a;
+}
+
+void suma(int *tab, int a)
+{
     int suma = 0;
     for (int i = 0; i < a; i++){
         suma+=tab[i];//suma=suma+tab[1] - sumowanie kolejnych wartosci
     }
     printf("Suma  %d\n", suma); // wypisz wynik
+}
+
+int main()
+{
+    FILE *fp = fopen("input","r");//liczy zmienne
+    int a=zliczzmienne(fp);
+    fclose(fp);
+    int tab[a];
+    fopen("input","r");
+    czytajplik(tab, fp);
+    fclose(fp);
+    suma(tab,a);
     return 1;
 }

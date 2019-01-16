@@ -1,30 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+void czytajplik(int *tab, FILE *fp)
 {
-    FILE *fp = fopen("input","r");//liczy zmienne
-    int x;
     int a = 0;
-    while(fscanf(fp,"%d",&x) != EOF)
-    {
-        a++;
-    }
-    fclose(fp);//skanuje liczby do tablicy
-    int tab[a];
-    a=0;
-    fopen("input","r");
+    int x;
     while(fscanf(fp,"%d",&x) != EOF)
     {
         tab[a] = x;
         a++;
     }
-    fclose(fp);
-    int suma[1000000];// taablica na milion
+}
+
+int zliczzmienne(FILE *fp)
+{
+    int a = 0;
+    int x;
+    while(fscanf(fp,"%d",&x) != EOF)
+    {
+        a++;
+    }
+    return a;
+}
+
+void sprawdz(int *tab, int a)
+{
+    int go=0;
+    int suma[200000];// tablica na milion
     suma[0]=tab[0];//pierwszy na sztywno
     int i = 1;
-    x = 1;
-    while(1)
+    int x = 1;
+    while(go==0)
     {
         suma[i]=suma[i-1]+tab[x]; //dodawanie kolejnych wartosci
         for (int j = 0; j < i; j++)
@@ -32,8 +38,7 @@ int main()
             if (suma[j]==suma[i])//sprawdzanie wszystkich poprzednich wartosci - szukanie odpowiedzi
             {
                 printf("Liczba - %d (pozycja - %d)\n", suma[j],i);// wypisanie rozwiazania
-                return 1;
-
+                go=1;
             }
         }
         i++;
@@ -41,4 +46,16 @@ int main()
         if(x>=a)//jesli przekroczy liczbe zmiennych
             x=0;
     }
+}
+
+int main()
+{
+    FILE *fp = fopen("input","r");//liczy zmienne
+    int a=zliczzmienne(fp);
+    fclose(fp);
+    int tab[a];
+    fopen("input","r");
+    czytajplik(tab, fp);
+    fclose(fp);
+    sprawdz(tab, a);
 }

@@ -17,14 +17,9 @@ void czytajplik(char **A, int ilosc, FILE *fp)
 	}
 }
 
-int main()
+void zliczlitery(char **A, int a)
 {
-	int a=250;
-	FILE *fp = fopen("slowa","r");
-  char **A = (char**) malloc(a*sizeof(char*));//tablica wyrazow
-	czytajplik(A,a,fp);
-	fclose(fp);
-  int x;
+	int x;
 	int dwa = 0;
 	int trzy = 0;
 	int licznik[26]={0};//26x0w tablicy poczatkowych wartosci
@@ -60,5 +55,14 @@ int main()
 	/*printf("Wynik1 - %d\n", wynik1);
 	printf("Wynik2 - %d\n", wynik2);	*/	
 	printf("Wynik - %d\n", wynik);	
-	return 1;
+}
+
+int main()
+{
+	int a=250;
+	FILE *fp = fopen("slowa","r");
+  char **A = (char**) malloc(a*sizeof(char*));//tablica wyrazow
+	czytajplik(A,a,fp);
+	fclose(fp);
+	zliczlitery(A,a);
 }

@@ -17,13 +17,8 @@ void czytajplik(char **A, int ilosc, FILE *fp)
 	}
 }
 
-int main()
+void porownaj(char **A, int a)
 {
-	int a=250;
-	FILE *fp = fopen("slowa","r");
-	char **A = (char**) malloc(a*sizeof(char*));//zapisuje wyrazy do tablicy
-	czytajplik(A,a,fp);
-	fclose(fp);
 	for(int i=1; i<a; i++)
 	{
 		for(int j=0; j<i; j++)//zeby nie porownywalo bez sensu dodatkowo 0z1 i 1 z 0
@@ -48,6 +43,16 @@ int main()
 			printf("%s\n%s\n",A[i],A[j]); //wypisz wynik z 2 tablic dla pewnosci
 		}
 	}
+}
+
+int main()
+{
+	int a=250;
+	FILE *fp = fopen("slowa","r");
+	char **A = (char**) malloc(a*sizeof(char*));//zapisuje wyrazy do tablicy
+	czytajplik(A,a,fp);
+	fclose(fp);
+	porownaj(A,a);
 	return 1;
 }
 
